@@ -4,39 +4,58 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
     width: 300px;
-    margin-bottom: 20px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: #2d2d2d; /* Chalkboard background color */
+    border: 5px solid #fff; /* Chalkboard border */
+    border-radius: 10px;
   }
   
   .cell {
     position: relative;
     width: 100px;
     height: 100px;
-    background-color: lightgray;
+    background-color: #42b3e7; /* Cell background color */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
     cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(59, 161, 245, 0.2); /* Cell box shadow */
+  }
+  
+  .cell.player {
+    color: #354ccf; /* Pastel chalk color for player moves */
+  }
+  
+  .cell.ai {
+    color: #ff8282; /* Pastel chalk color for AI moves */
   }
   
   .cell.winning {
-    background-color: yellow;
-  }
-  
-  .cell.move-x {
-    color: blue;
-  }
-  
-  .cell.move-o {
-    color: red;
-  }
-  
-  #options {
-    margin-bottom: 10px;
+    background-color: #f13535; /* Change the background color to indicate winning cells */
   }
   
   button {
     font-size: 18px;
     padding: 5px 10px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #message {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #050101; /* Result message color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Result message text shadow */
+    text-align: center;
   }
   
