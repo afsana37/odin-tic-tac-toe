@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Tic Tac Toe</h1>
+  <div id="board">
+    <div class="cell" onclick="game.makeMove(0)"></div>
+    <div class="cell" onclick="game.makeMove(1)"></div>
+    <div class="cell" onclick="game.makeMove(2)"></div>
+    <div class="cell" onclick="game.makeMove(3)"></div>
+    <div class="cell" onclick="game.makeMove(4)"></div>
+    <div class="cell" onclick="game.makeMove(5)"></div>
+    <div class="cell" onclick="game.makeMove(6)"></div>
+    <div class="cell" onclick="game.makeMove(7)"></div>
+    <div class="cell" onclick="game.makeMove(8)"></div>
+    <div id="line"></div>
+  </div>
+  <button onclick="game.reset()">Reset</button>
+  <div id="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

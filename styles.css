@@ -1,0 +1,30 @@
+#board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  .cell {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+  }
+  
+  .cell.winning {
+    background-color: yellow; /* Change the background color to yellow for winning cells */
+  }
+  
+  button {
+    font-size: 18px;
+    padding: 5px 10px;
+  }
+  
