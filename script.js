@@ -1,5 +1,4 @@
-
-  // Factory function to create players
+// Factory function to create players
 const Player = (name, symbol) => {
     return { name, symbol };
   };
@@ -8,7 +7,7 @@ const Player = (name, symbol) => {
   const game = {
     currentPlayer: null,
     board: Array(9).fill(null),
-    players: [Player("Player 1", "X"), Player("Player 2", "O")],
+    players: [Player("Player", "X"), Player("AI", "O")],
     gameEnded: false,
   
     // Initialize the game
@@ -22,9 +21,28 @@ const Player = (name, symbol) => {
       if (this.board[index] === null && !this.gameEnded) {
         this.board[index] = this.currentPlayer.symbol;
         this.checkWin();
-        this.currentPlayer = this.currentPlayer === this.players[0] ? this.players[1] : this.players[0];
+        if (!this.gameEnded) {
+          this.currentPlayer = this.currentPlayer === this.players[0] ? this.players[1] : this.players[0];
+          if (this.currentPlayer === this.players[1]) {
+            this.makeAIMove();
+          }
+        }
         this.render();
       }
+    },
+  
+    // Make an AI move
+    makeAIMove() {
+      const availableMoves = this.board.reduce((acc, cell, index) => {
+        if (cell === null) {
+          acc.push(index);
+        }
+        return acc;
+      }, []);
+  
+      const randomIndex = Math.floor(Math.random() * availableMoves.length);
+      const aiMove = availableMoves[randomIndex];
+      this.makeMove(aiMove);
     },
   
     // Check for a win
@@ -43,7 +61,7 @@ const Player = (name, symbol) => {
           this.board[a] === this.board[c]
         ) {
           this.gameEnded = true;
-          this.displayMessage(`Player ${this.currentPlayer.name} wins!`);
+          this.displayMessage(`${this.currentPlayer.name} wins!`);
           this.highlightCells(combination);
           return;
         }

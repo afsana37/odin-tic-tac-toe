@@ -20,7 +20,19 @@
   }
   
   .cell.winning {
-    background-color: yellow; /* Change the background color to yellow for winning cells */
+    background-color: yellow;
+  }
+  
+  .cell.move-x {
+    color: blue;
+  }
+  
+  .cell.move-o {
+    color: red;
+  }
+  
+  #options {
+    margin-bottom: 10px;
   }
   
   button {
